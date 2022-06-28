@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Qual é o número?</string>
+    <string name="header_title">Qual é o número?</string>
+    <string name="new_game_button">Nova Partida</string>
+    <string name="send_button">Enviar</string>
+    <string name="input_hint">Digite o palpite</string>
+    <string name="less_than">É menor</string>
+    <string name="greater_than">É maior</string>
+    <string name="correct">Acertou!</string>
+    <string name="error">Erro</string>
+    <string name="invalid_number">Digite um número no intervalo de %d: %d</string>
+    <string name="digits_counter" translatable="false">%d/%d</string>
+    <string name="display_size">Tamanho do display:</string>
+    <string name="red">Vermelho:</string>
+    <string name="green">Verde:</string>
+    <string name="blue">Azul:</string>
+</resources>

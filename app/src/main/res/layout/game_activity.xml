@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/theme_color"
+        android:elevation="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/header_title"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_font_size"
+                tools:ignore="RelativeOverlap" />
+
+            <ImageButton
+                android:id="@+id/fontSizeButton"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_marginHorizontal="@dimen/margin"
+                android:layout_toStartOf="@id/palleteButton"
+                android:background="@drawable/ic_format_size_24px"
+                android:backgroundTint="@color/white"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/palleteButton"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_alignParentEnd="true"
+                android:layout_marginHorizontal="@dimen/margin"
+                android:background="@drawable/ic_palette_black_18dp"
+                android:backgroundTint="@color/white"
+                tools:ignore="ContentDescription" />
+
+        </RelativeLayout>
+
+    </Toolbar>
+
+    <LinearLayout
+        android:id="@+id/optionsBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margin"
+        android:paddingStart="@dimen/margin">
+        <LinearLayout
+            android:id="@+id/sizeOption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/display_size"/>
+
+            <SeekBar
+                android:id="@+id/displaySizeBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:max="11"
+                android:min="1"
+                android:progress="6"
+                android:progressBackgroundTint="@color/theme_color"
+                android:progressTint="@color/theme_color"
+                android:thumbTint="@color/theme_color" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/colorOption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="@dimen/text_width"
+                    android:layout_height="wrap_content"
+                    android:text="@string/red"
+                    android:textColor="@color/red_color"/>
+                <SeekBar
+                    android:id="@+id/redBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="255"
+                    android:min="0"
+                    android:progressBackgroundTint="@color/theme_color"
+                    android:progressTint="@color/theme_color"
+                    android:thumbTint="@color/theme_color" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginVertical="@dimen/margin">
+                <TextView
+                    android:layout_width="@dimen/text_width"
+                    android:layout_height="wrap_content"
+                    android:text="@string/green"
+                    android:textColor="@color/green_color"/>
+                <SeekBar
+                    android:id="@+id/greenBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="255"
+                    android:min="0"
+                    android:progressBackgroundTint="@color/theme_color"
+                    android:progressTint="@color/theme_color"
+                    android:thumbTint="@color/theme_color" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="@dimen/text_width"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blue"
+                    android:textColor="@color/blue_color"/>
+                <SeekBar
+                    android:id="@+id/blueBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="255"
+                    android:min="0"
+                    android:progressBackgroundTint="@color/theme_color"
+                    android:progressTint="@color/theme_color"
+                    android:thumbTint="@color/theme_color" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/layout_margin_top"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/gameMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/status_text_size"
+            tools:text="Status" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:id="@+id/thirdDisplay"
+                android:layout_width="@dimen/display_width"
+                android:layout_height="@dimen/display_height"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/display_background" />
+
+                <ImageView
+                    android:id="@+id/thirdDigit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/num0"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/secondDisplay"
+                android:layout_width="@dimen/display_width"
+                android:layout_height="@dimen/display_height"
+                android:layout_marginHorizontal="@dimen/margin"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/display_background" />
+
+                <ImageView
+                    android:id="@+id/secondDigit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/num0"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/firstDisplay"
+                android:layout_width="@dimen/display_width"
+                android:layout_height="@dimen/display_height"
+                android:backgroundTint="#FFFFFF"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/display_background" />
+
+                <ImageView
+                    android:id="@+id/firstDigit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/num0"/>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/newGameButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_game_button" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/inputNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/inputNumberCount"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/margin"
+        android:layout_marginBottom="@dimen/margin"
+        android:layout_toStartOf="@id/submitButton"
+        android:hint="@string/input_hint"
+        android:importantForAutofill="no"
+        android:maxLength="3"
+        android:inputType="number"
+        />
+
+    <TextView
+        android:id="@+id/inputNumberCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/inputNumber"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/margin"
+        tools:text="2/3" />
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/inputNumber"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/margin"
+        android:text="@string/send_button"
+        android:enabled="false"/>
+
+</RelativeLayout>
